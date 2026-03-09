@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Hide Chatbar",
+  "version": "1.0.0",
+  "description": "Hide the AI chatbar to reclaim reading space on Claude, ChatGPT, Perplexity, and Gemini",
+  "host_permissions": [
+    "*://*.claude.ai/*",
+    "*://*.chatgpt.com/*",
+    "*://*.perplexity.ai/*",
+    "*://*.gemini.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.claude.ai/*",
+        "*://*.chatgpt.com/*",
+        "*://*.perplexity.ai/*",
+        "*://*.gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ]
+}
